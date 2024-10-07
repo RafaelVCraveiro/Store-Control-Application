@@ -1,0 +1,22 @@
+-- Table: public.funcionarios
+
+-- DROP TABLE IF EXISTS public.funcionarios;
+
+CREATE TABLE IF NOT EXISTS public.funcionarios
+(
+    id integer NOT NULL DEFAULT nextval('"tbFuncionarios_id_seq"'::regclass),
+    usuario character varying COLLATE pg_catalog."default" NOT NULL,
+    senha character varying COLLATE pg_catalog."default" NOT NULL,
+    nome character varying COLLATE pg_catalog."default" NOT NULL,
+    email character varying COLLATE pg_catalog."default" NOT NULL,
+    nascimento character varying COLLATE pg_catalog."default" NOT NULL,
+    telefone character varying COLLATE pg_catalog."default" NOT NULL,
+    cpf character varying COLLATE pg_catalog."default" NOT NULL,
+    funcao character varying COLLATE pg_catalog."default",
+    CONSTRAINT "tbFuncionarios_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.funcionarios
+    OWNER to postgres;

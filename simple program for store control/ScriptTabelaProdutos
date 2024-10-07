@@ -1,0 +1,18 @@
+-- Table: public.produtos
+
+-- DROP TABLE IF EXISTS public.produtos;
+
+CREATE TABLE IF NOT EXISTS public.produtos
+(
+    id integer NOT NULL DEFAULT nextval('proodutos_id_seq'::regclass),
+    nome character varying COLLATE pg_catalog."default" NOT NULL,
+    fabricante character varying COLLATE pg_catalog."default" NOT NULL,
+    quantidade smallint NOT NULL,
+    codigo character varying COLLATE pg_catalog."default" NOT NULL,
+    preco double precision NOT NULL
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.produtos
+    OWNER to postgres;
